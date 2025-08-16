@@ -15,21 +15,37 @@ const Projects: React.FC = () => {
     { id: 'ai', label: 'AI/ML' }
   ];
 
-  const getProjectCategory = (tags: string[]) => {
+  // ✅ Updated to also check project.title for "Green Cycle Hub"
+  const getProjectCategory = (tags: string[], title?: string) => {
     const tagString = tags.join(' ').toLowerCase();
-    if (tagString.includes('ai') || tagString.includes('ml') || tagString.includes('chatbot') || tagString.includes('opengpt')) {
+
+    // AI/ML check
+    if (
+      tagString.includes('ai') ||
+      tagString.includes('ml') ||
+      tagString.includes('chatbot') ||
+      tagString.includes('opengpt')
+    ) {
       return 'ai';
     }
+
+    // Special case: Green Cycle Hub → AI/ML
+    if (title && title.toLowerCase().includes('green cycle hub')) {
+      return 'ai';
+    }
+
+    // Fullstack check
     if (tagString.includes('firebase') || tagString.includes('django') || tagString.includes('python')) {
       return 'fullstack';
     }
+
     return 'frontend';
   };
 
   const filteredProjects =
     activeFilter === 'all'
       ? projects
-      : projects.filter(project => getProjectCategory(project.tags) === activeFilter);
+      : projects.filter(project => getProjectCategory(project.tags, project.title) === activeFilter);
 
   return (
     <section
@@ -120,16 +136,16 @@ const Projects: React.FC = () => {
                   <div className="absolute top-3 right-3">
                     <span
                       className={`px-3 py-1 text-xs rounded-full font-light ${
-                        getProjectCategory(project.tags) === 'ai'
+                        getProjectCategory(project.tags, project.title) === 'ai'
                           ? 'bg-gradient-to-r from-[#8b5cf6] to-[#e91e63] text-white'
-                          : getProjectCategory(project.tags) === 'fullstack'
+                          : getProjectCategory(project.tags, project.title) === 'fullstack'
                           ? 'bg-gradient-to-r from-[#06d6a0] to-[#64ffda] text-[#0a192f]'
                           : 'bg-gradient-to-r from-[#64ffda] to-[#06d6a0] text-[#0a192f]'
                       }`}
                     >
-                      {getProjectCategory(project.tags) === 'ai'
+                      {getProjectCategory(project.tags, project.title) === 'ai'
                         ? 'AI/ML'
-                        : getProjectCategory(project.tags) === 'fullstack'
+                        : getProjectCategory(project.tags, project.title) === 'fullstack'
                         ? 'Full Stack'
                         : 'Frontend'}
                     </span>
