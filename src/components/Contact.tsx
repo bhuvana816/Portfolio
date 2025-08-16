@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
             <h3 className="text-xl font-medium text-white mb-6">Find me online</h3>
             <div className="flex justify-center gap-6">
               <a
-                href="https://linkedin.com/in/bhuvana-sahithi"
+                href="https://www.linkedin.com/in/bhuvanasreesahithi16/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-[#112240] rounded-lg hover:bg-[#64ffda] hover:text-[#0a192f] transition-all duration-300 group shadow-md hover:shadow-lg"
