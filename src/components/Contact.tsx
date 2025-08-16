@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
           >
             {/* Phone */}
             <a
-              href="tel:+919876543210"
+              href="tel:+916281941608"
               className="flex items-center gap-4 p-6 rounded-xl bg-[#112240] hover:bg-[#1a365d] transition-all duration-300 shadow-md hover:shadow-lg group"
             >
               <Phone
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
 
             {/* Email */}
             <a
-              href="mailto:bhuvana.sahithi@example.com"
+              href="mailto:bhuvanass2005@gmail.com"
               className="flex items-center gap-4 p-6 rounded-xl bg-[#112240] hover:bg-[#1a365d] transition-all duration-300 shadow-md hover:shadow-lg group"
             >
               <Mail
