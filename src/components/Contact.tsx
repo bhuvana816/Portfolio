@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
               />
               <div>
                 <p className="text-gray-400 text-sm font-light">Phone</p>
-                <p className="text-white font-medium">+91 98765 43210</p>
+                <p className="text-white font-medium">+91 6281941608</p>
               </div>
             </a>
 
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
               />
               <div>
                 <p className="text-gray-400 text-sm font-light">Email</p>
-                <p className="text-white font-medium">bhuvana.sahithi@example.com</p>
+                <p className="text-white font-medium">bhuvanass2005@gmail.com</p>
               </div>
             </a>
           </motion.div>
